@@ -16,5 +16,5 @@ class Seat {
 		int getResNum() { return resNum; }
 		void reserve() { vacant = false; }
 		void cancel() { vacant = true; }
-}
+};
 #endif
