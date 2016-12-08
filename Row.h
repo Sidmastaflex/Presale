@@ -2,6 +2,7 @@
 #define ROW_H
 #include "Seat.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -12,7 +13,9 @@ class Row {
 	public:
 		Row();
 		Row(char r, vector<Seat> s);
-		int reserve(int s);
-		void cancelRes(int s);
+		void reserve(unsigned s);
+		void cancelRes(unsigned s, int rn);
+
+		friend ostream& operator<<(ostream &, const Row&);
 };
 #endif

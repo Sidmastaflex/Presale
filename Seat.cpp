@@ -1,15 +1,24 @@
 #include "Seat.h"
 #include <stdlib.h>
+#include <iostream>
 
 using namespace std;
 
 Seat::Seat() {
-	seat = 1;
 	vacant = true;
-	resNum = rand() * 100000;
+	resNum = 111111 + rand() % 100000;
 }
-Seat::Seat(int s, bool v) {
-	seat = s;
+
+Seat::Seat(bool v) {
 	vacant = v;
-	resNum = rand() * 100000;
+	resNum = 111111 + rand() % 100000;
+}
+
+ostream& operator<<(ostream& out, const Seat& rhs) {
+	if(rhs.isVacant())
+		out << " is vacant";
+	else
+		out << " is not vacant";
+
+	return out;
 }
